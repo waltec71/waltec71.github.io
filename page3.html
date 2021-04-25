@@ -24,8 +24,8 @@
 </form>
 <script>
 function myFunction(drinks,hours,altitude) {
-  var equiv = (drinks + altitude)/hours
-  return equiv  
+  var alt_multiplier = altitude / 7500 + 1
+  return Math.round(drinks * alt_multiplier - hours)
 }
 </script>  
   
