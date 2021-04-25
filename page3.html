@@ -8,9 +8,24 @@
   <link rel="shortcut icon" type="image/png" href="favicon-32x32.png"/>
 </head>
 <body style="background-color: darkorange;">
-<h1>Page 2</h1>
-
+<h1>Page 3</h1>
 <p>
+ Altitude Drink Equivalent Calculator
+<form oninput="x.value=parseInt(drinks.value)+parseInt(altitude.value)">
+<label for="drinks">How many drinks have you had?</label>
+<input type="number" id="drinks" value="0">drinks<br>
+<label for="hours">How many hours ago did you start drinking?</label>
+<input type="number" id="hours">hours<br>
+<label for="altitude">What's your current altitude?</label>
+<input type="radio" id="altitude" value="other">ft
+<br>
+You feel like you've had
+<output name="x" for="drinks altitude"></output> drinks
+</form>
+  
+  
+  
+  
     <a href="index.html" target="_self">Back to main</a>
     </p>
 </body>
