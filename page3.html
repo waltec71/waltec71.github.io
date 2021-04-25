@@ -10,19 +10,24 @@
 <body style="background-color: darkorange;">
 <h1>Page 3</h1>
 <p>
- Altitude Drink Equivalent Calculator
-<form oninput="x.value=parseInt(drinks.value)+parseInt(altitude.value)">
-<label for="drinks">How many drinks have you had?</label>
+<b>Altitude Drink Equivalent Calculator <b>
+<form oninput="x.value=myFunction(drinks.value,hours.value,altitude.value)">
+<label for="drinks">How many drinks have you had?</label><br>
 <input type="number" id="drinks" value="0">drinks<br>
-<label for="hours">How many hours ago did you start drinking?</label>
+<label for="hours">How many hours ago did you start drinking?</label><br>
 <input type="number" id="hours">hours<br>
-<label for="altitude">What's your current altitude?</label>
-<input type="radio" id="altitude" value="other">ft
-<br>
-You feel like you've had
-<output name="x" for="drinks altitude"></output> drinks
+<label for="altitude">What's your current altitude?</label><br>
+<input type="number" id="altitude">ft
+<br><br>
+<b>You feel like you've had
+<output name="x" for="drinks altitude"></output> drinks<b>
 </form>
-  
+<script>
+function myFunction(drinks,hours,altitude) {
+  var equiv = (drinks + altitude)/hours
+  return equiv  
+}
+</script>  
   
   
   
