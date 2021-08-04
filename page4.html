@@ -8,29 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <h1>Page 4</h1>
-<p>
-<b>Altitude Drink Equivalent Calculator <b>
-<form oninput="x.value=myFunction(drinks.value,hours.value,altitude.value)">
-<label for="drinks">How many drinks have you had?</label><br>
-<input type="number" id="drinks" value="0">drinks<br>
-<label for="hours">How many hours ago did you start drinking?</label><br>
-<input type="number" id="hours">hours<br>
-<label for="altitude">What's your current altitude?</label><br>
-<input type="number" id="altitude">ft
-<br><br>
-<b>You feel like you've had
-<output name="x" for="drinks altitude"></output> drinks<b>
-</form>
-<script>
-function myFunction(drinks,hours,altitude) {
-  var alt_multiplier = altitude / 7500 + 1
-  return Math.round(drinks * alt_multiplier - hours)
-}
-</script>  
-  
-  
-  
-    <a href="index.html" target="_self">Back to main</a>
-    </p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="/js/jqueryscript.js"></script>
 </body>
 </html>
