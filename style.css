@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  color: navy;
+  color: #3a3d3b;
   margin-left: 20px;
 }
 
@@ -14,4 +14,9 @@ h1 {
 
 .center {
   text-align: center;
+}
+
+.dark {
+  background-color: #3a3d3b;
+  color: lightblue;
 }
