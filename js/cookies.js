@@ -43,7 +43,6 @@ function setCookie(cname, cvalue, exdays) {
     if (getCookie("preference") == "dark") {
       document.body.classList.add('dark');
     }
-
   }
 
 window.onload = loadCookies();

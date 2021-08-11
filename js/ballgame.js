@@ -6,11 +6,13 @@ let x = 150;
 let y = 100;
 let radius = 100;
 let ballSpeed = 5;
+let score = 0;
 let downPressed = false;
 let upPressed = false;
 let leftPressed = false;
 let rightPressed = false;
 let lastPressedColor = "blue";
+
 //game loop
 function drawGame(){
     console.log('draw');
@@ -19,6 +21,7 @@ function drawGame(){
     inputs();
     boundaryCheck();
     drawGreenBlob();
+    document.getElementById("score").innerHTML = "Score: " + score;
 }
 
 function boundaryCheck(){
@@ -26,18 +29,22 @@ function boundaryCheck(){
     //top
     if (y < 0 - radius){
         y = canvas.height + radius;
+        score += 1;
     }
      //bottom
      if (y > canvas.height + radius){
         y = 0 - radius;
+        score += 1;
     }
     //left
     if (x < 0 - radius){
         x = canvas.width + radius;
+        score += 1;
     }
      //right
      if (x > canvas.width + radius){
         x = 0 - radius;
+        score += 1;
     }       
 }
 
