@@ -1,4 +1,4 @@
-console.log("hello");
+//console.log("hello");
 const canvas = document.getElementById('gameArea');
 const ctx = canvas.getContext("2d");
 
@@ -15,7 +15,7 @@ let lastPressedColor = "blue";
 
 //game loop
 function drawGame(){
-    console.log('draw');
+    //console.log('draw');
     requestAnimationFrame(drawGame);
     clearScreen();
     inputs();
