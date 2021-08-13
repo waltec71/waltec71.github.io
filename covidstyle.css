@@ -1,0 +1,20 @@
+#scorediv {
+    background-color: lightgreen;
+    border: magenta;
+    height: 100px;
+    width: 300px;
+    align-self: center;
+}
+
+
+#score {
+    box-shadow: lightpink;
+    text-align: center;
+    font-size: 50px;
+    color: mediumslateblue;
+
+}
+
+* {
+    font-family: cursive;
+}

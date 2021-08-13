@@ -16,14 +16,21 @@
           overflow: hidden; /* this hides scroll bar ! */
       }
   </style>
+  <link rel="stylesheet" href="covidstyle.css">
+
 </head>
 <h1>Catch Covid!</h1>
 <body>
 <p>How much covid can you catch?</p>
-<p id="score"></p>
+<div id="scorediv">
+  <p id="score"></p>
+</div>
 <canvas id="gameArea" width="800" height="600"></canvas>
 <script src="js/catchcovidgame.js"></script>
 </body>
+  <p>
+    <button onclick= "startGame()"> Start Game</button>
+  </p>
   <p>
   <a href="index.html" target="_self">Back to main</a>
   </p>

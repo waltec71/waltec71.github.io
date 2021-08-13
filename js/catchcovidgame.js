@@ -1,39 +1,54 @@
 const canvas = document.getElementById('gameArea');
 const ctx = canvas.getContext("2d");
-
-let x = 400;
-let y = 300;
-let radius = 98;
-let ballSpeed = 5;
-let score = 0;
-var mouseX;
-var mouseY;
-let downPressed = false;
-let upPressed = false;
-let leftPressed = false;
-let rightPressed = false;
-let lastPressedColor = "blue";
-let zeroTime = new Date();
-let zeroTimeMs = zeroTime.getTime();
-let currentTime = new Date();
-let currentTimeMs = zeroTimeMs;
-let elapsedTime = 0;
-let timeDecay = 2000;
-var ballColor;
 var covid = new Image();
 covid.src = '/images/covid.png';
+let zeroTime = new Date();
+let currentTime = new Date();
+var x, y, radius, score, mouseX, mouseY, downPressed, upPressed, leftPressed, rightPressed, lastPressedColor, zeroTimeMs, currentTimeMs, elapsedTime, timeDecay, ballColor, id, z;
+function setDefaults() {
+    x = 400;
+    y = 300;
+    radius = 98;
+    ballSpeed = 5;
+    score = 0;
+    //var mouseX;
+    //var mouseY;
+    downPressed = false;
+    upPressed = false;
+    leftPressed = false;
+    rightPressed = false;
+    lastPressedColor = "blue";
+    zeroTimeMs = zeroTime.getTime();
+    //let currentTime = new Date();
+    currentTimeMs = zeroTimeMs;
+    elapsedTime = 0;
+    timeDecay = 1000;
+    //var ballColor;
+    //var id;
+    z = 600;
+}
+ctx.fillStyle = "black";
+ctx.fillRect(0,0, canvas.clientWidth, canvas.height);
 //game loop
 function drawGame(){
-    requestAnimationFrame(drawGame);
+    id = requestAnimationFrame(drawGame);
     clearScreen();
     newBall();
     drawBlob();
     document.getElementById("score").innerHTML = "Score: " + score;
+    if (timeDecay <= -2500) {
+        //cancelAnimationFrame(id);
+        youLose();
+        //alert('hey');
+    }
+    mouseX = 10000; //make sure next ball does not land on last mouse position
+    mouseY = 10000; //
 }
 
 function newBall() {
     if (updateTimes()) {
         setNewCoords();
+        timeDecay -= 50;
         return
     }
 
@@ -89,5 +104,22 @@ function setNewCoords(){
     //console.log(x + ", " + y)
 }
 
-drawGame();
+function youLose() {
+    clearScreen();
+    var loser = new Image();
+    loser.src = '/images/lose.png';
+    ctx.drawImage(loser, 0, z);
+    if (z>= 0) {
+        z -= 2;
+    }
+
+
+}
+
+function startGame() {
+    setDefaults;
+    cancelAnimationFrame(drawGame);
+    setDefaults();
+    drawGame();
+}
 
