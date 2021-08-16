@@ -1,11 +1,22 @@
 {
-    "name": "js-fundamentals-test",
-    "version": "1.0.0",
-    "description": "",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
-  }
+  "name": "js-fundamentals-test",
+  "version": "1.0.0",
+  "description": "whatever",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Chris Walters",
+  "license": "ISC",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waltec71/waltec71.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/waltec71/waltec71.github.io/issues"
+  },
+  "homepage": "https://github.com/waltec71/waltec71.github.io#readme"
+}
