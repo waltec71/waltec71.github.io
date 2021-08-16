@@ -1,20 +1,19 @@
-var PORT = process.env.PORT || 5000;
 var express = require('express');
 var app = express();
+var path = require('path');
 
-var http = require('http');
-var server = http.Server(app);
+app.use(express.static(path.join(__dirname)));
+app.use("/images", express.static(__dirname + '/images'));
+app.use("/js", express.static(__dirname + '/js'));
 
-app.use(express.static('client'));
-
-server.listen(PORT, function() {
-  console.log('Chat server running');
+// viewed at based directory http://localhost:8080/
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + 'views/index.html'));
 });
 
-var io = require('socket.io')(server);
-
-io.on('connection', function(socket) {
-  socket.on('message', function(msg) {
-    io.emit('message', msg);
-  });
+// add other routes below
+app.get('/about', function (req, res) {
+  res.sendFile(path.join(__dirname + 'views/about.html'));
 });
+
+app.listen(process.env.PORT || 8080);
