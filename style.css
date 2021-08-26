@@ -1,21 +1,155 @@
-body {
-  background-color: lightblue;
-}
 
-h1 {
-  margin-left: 20px;
+:root {
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  --text-primary: #861414;
+  --text-secondary: #784ca1;
+  --bg-primary: #d6b351;
+  --bg-secondary: #e6902e;
+  --transition-speed: 600ms;
 }
 
 * {
-  font-family: 'Raleway', sans-serif;
+  cursor: url(https://ani.cursors-4u.net/games/gam-16/gam1565.cur), auto;
+}
+body {
+  color: rgb(17, 17, 17);
+  background-color: rgb(252, 244, 204);
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+
+main {
+  margin-left: 5rem;
+  padding: 1rem;
+  margin-top: 5rem;
   text-align: center;
 }
 
-.center {
-  text-align: center;
+.navbar {
+  position: fixed;
+  top: 0;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  display: table-row;
+}
+
+.navbar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-item :hover {
+  font-weight: 600;
+}
+
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+
+
+
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 ;
+}
+
+.fa-primary {
+  color: #e6902e;
+}
+
+.fa-secondary {
+  color: #d6b351;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+
+nav a{
+  float:left;
+  text-align:center;
+  width:75%;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: left;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    height: 4rem;
+    width: 100vw;
+  }
+
+
 }
 
 .dark {
-  background-color: #3a3d3b;
-  color: lightblue;
+  --text-primary: #000000;
+  --text-secondary: #c9bdbd;
+  --bg-primary: #504f4f;
+  --bg-secondary: #363657;
+  background-color: #acacac;
+  color: white;
+  cursor: url(https://ani.cursors-4u.net/games/gam-16/gam1565.cur), auto;
+
 }
+
+
+.theme-icon {
+  display: none;
+}
+
+.dark #darkIcon {
+  display: block;
+}
+
+

@@ -1,0 +1,77 @@
+  
+<!DOCTYPE html>
+<html>
+<head> 
+  <title>
+    7 Wonders Green Card Calculator
+  </title>
+  <link rel="shortcut icon" type="image/png" href="favicon-32x32.png"/>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="navbar-list">
+          <!-- cool chevron pattern logo -->
+    
+    <!-- contact form -->
+      <li class="nav-item">
+        <a href="page2.html" class="nav-link">
+          <span class="link-text">Contact Form</span>
+        </a>
+      </li>
+    <!-- altitude drink page -->
+      <li class="nav-item">
+        <a href="page3.html" class="nav-link">
+          <span class="link-text">Altitude Drink Equivalent Calculator</span>
+        </a>
+      </li>
+     <!-- ball game -->
+      <li class="nav-item">
+        <a href="page4.html" class="nav-link">
+          <span class="link-text">Ball Game</span>
+        </a>
+      </li>
+    <!-- catch covid -->
+      <li class="nav-item">
+        <a href="catchcovid.html" class="nav-link">
+          <span class="link-text">Catch Covid Game</span>
+        </a>
+      </li>
+     <!-- dark mode toggle -->
+      <li class="nav-item" id="themeButton">
+        <a href="sevenwonders.html" class="nav-link">
+          <span class="link-text">Seven Wonders Green Card Calculator</span>
+        </a>
+      </li>
+    </ul>
+    </nav>
+<main>
+<h1>7 Wonders Green Card Calculator</h1>
+<p>
+<b> <b>
+<form oninput="x.value=myFunction(drinks.value,hours.value,altitude.value)">
+<label for="drinks">Proctactor Cards: </label><br>
+<input type="number" id="drinks" value="0"><br>
+<label for="hours">Gear Cards: </label><br>
+<input type="number" id="hours"><br>
+<label for="altitude">Tablet Cards: </label><br>
+<input type="number" id="altitude">
+<br><br>
+<b>Score: 
+<output name="x" for="drinks altitude"></output><b>
+</form>
+<script>
+function myFunction(protractor, gear, tablet) {
+    return protractor*protractor + gear*gear + tablet*tablet + 7*Math.min(protractor, gear, tablet);
+}
+</script>  
+  
+  
+  
+    <a href="index.html" target="_self">Back to main</a>
+    </p>
+</main>
+</body>
+<script src="js/cookies.js" ></script>
+</html>

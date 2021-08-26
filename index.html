@@ -2,6 +2,7 @@
 <html>
 
 <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
     King!
   </title>
@@ -12,6 +13,44 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
+<body>
+  <nav class="navbar">
+    <ul class="navbar-list">
+      <!-- cool chevron pattern logo -->
+
+<!-- contact form -->
+  <li class="nav-item">
+    <a href="page2.html" class="nav-link">
+      <span class="link-text">Contact Form</span>
+    </a>
+  </li>
+<!-- altitude drink page -->
+  <li class="nav-item">
+    <a href="page3.html" class="nav-link">
+      <span class="link-text">Altitude Drink Equivalent Calculator</span>
+    </a>
+  </li>
+ <!-- ball game -->
+  <li class="nav-item">
+    <a href="page4.html" class="nav-link">
+      <span class="link-text">Ball Game</span>
+    </a>
+  </li>
+<!-- catch covid -->
+  <li class="nav-item">
+    <a href="catchcovid.html" class="nav-link">
+      <span class="link-text">Catch Covid Game</span>
+    </a>
+  </li>
+ <!-- dark mode toggle -->
+  <li class="nav-item" id="themeButton">
+    <a href="sevenwonders.html" class="nav-link">
+      <span class="link-text">Seven Wonders Green Card Calculator</span>
+    </a>
+  </li>
+</ul>
+</nav>
+<main>
 <h1>Boo!</h1>
 <p>Did I scare you?</p><br>
 <p>Try clicking the buttons below to switch between light and dark mode.</p>
@@ -19,24 +58,12 @@
 <button onclick= "darkMode()"> Dark</button>
 <br><br>
 <IMG SRC="dancing pumpkin.gif">
-<div>
- <p>
-  <a href="page2.html" target="_self">Contact Form</a>
- </p>
- <p>
-  <a href="page3.html" target="_self">Altitude Drink Equivalent Calculator</a
- </p> 
- <p>
-  <a href="page4.html" target="_self">Ball Game</a
- </p>
- <p>
-  <a href="catchcovid.html" target="_self">Catch Covid</a>
- </p>
-    </div>
-    <button onclick= "checkCookieButton()"> Check Cookies</button>
+<br><br>
+<button onclick= "checkCookieButton()"> Check Cookies</button>
 <script>
   function lightMode() {
     document.body.classList.remove('dark');
+
     setCookie("preference", "light", 365);
   }
   function darkMode() {
@@ -44,6 +71,7 @@
     setCookie("preference", "dark", 365);
   }
 </script>
+</main>
 </body>
 <script src="js/cookies.js" ></script>
 </html>
