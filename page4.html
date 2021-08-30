@@ -18,54 +18,24 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="favicon-32x32.png"/>
 </head>
-<h1>Moving Ball</h1>
-<body>
-  <nav class="navbar">
-    <ul class="navbar-list">
-      <!-- cool chevron pattern logo -->
 
-<!-- contact form -->
-  <li class="nav-item">
-    <a href="page2.html" class="nav-link">
-      <span class="link-text">Contact Form</span>
-    </a>
-  </li>
-<!-- altitude drink page -->
-  <li class="nav-item">
-    <a href="page3.html" class="nav-link">
-      <span class="link-text">Altitude Drink Equivalent Calculator</span>
-    </a>
-  </li>
- <!-- ball game -->
-  <li class="nav-item">
-    <a href="page4.html" class="nav-link">
-      <span class="link-text">Ball Game</span>
-    </a>
-  </li>
-<!-- catch covid -->
-  <li class="nav-item">
-    <a href="catchcovid.html" class="nav-link">
-      <span class="link-text">Catch Covid Game</span>
-    </a>
-  </li>
- <!-- dark mode toggle -->
-  <li class="nav-item" id="themeButton">
-    <a href="sevenwonders.html" class="nav-link">
-      <span class="link-text">Seven Wonders Green Card Calculator</span>
-    </a>
-  </li>
-</ul>
-</nav>
+<body>
+  <iframe src="./nav.html"></iframe>
+  <h1>Moving Ball</h1>
 <p>Use the arrow keys to move the ball across the screen.</p>
 <p id="score"></p>
 <canvas id="gameArea" width="800" height="600"></canvas>
 <script src="js/ballgame.js"></script>
 </body>
-  <audio loop autoplay>
+  <audio loop autoplay id="cancer">
   <source src="Sakura_2020.mp3">
   </audio> 
   <p>
   <a href="index.html" target="_self">Back to main</a>
   </p>
   <script src="js/cookies.js" ></script>
+  <script>
+    var audio = document.getElementById("cancer");
+    audio.volume = 0.02;
+  </script>
 </html>
