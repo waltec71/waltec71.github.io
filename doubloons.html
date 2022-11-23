@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Bank of Doubloon
+  </title>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+  <link rel="shortcut icon" type="image/png" href="favicon-32x32.png"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<main>
+<p>Check funds or record a change in Doubloon balance below.</p>
+<button onclick= "checkBalance()"> Check balance</button>
+<button onclick= "addBalance()"> Make a deposit</button>
+<button onclick= "removeBalance()"> Make a withdrawal</button>
+<br><br>
+<IMG SRC="dancing pumpkin.gif">
+<br><br>
+<script>
+    function checkBalance() {
+        balance = getCookie("balance");
+        if (balance == "") {
+            balance = "0";
+        }
+        alert("You currently have " + balance + " doubloons.")
+        return balance
+  }
+  function addBalance() {
+    balance = parseFloat(checkBalance())
+    amount = parseFloat(prompt("How many doubloons will you be depositing today?",""));
+    if (isNaN(amount)){
+        alert("That's not a number!")
+        return
+    }    
+    let newbalance = balance + amount;
+    setCookie("balance", newbalance, 1000);
+    alert("You now have " + newbalance + " doubloons. Spend them wisely.");
+
+  }
+  function removeBalance() {
+    balance = parseFloat(checkBalance())
+    amount = parseFloat(prompt("How many doubloons will you be withdrawing today?",""));
+    if (isNaN(amount)){
+        alert("That's not a number!")
+        return
+    }   
+    let newbalance = balance - amount;
+    setCookie("balance", newbalance, 1000);
+    alert("You now have " + newbalance + " doubloons. Spend them wisely.");
+
+  }
+
+</script>
+</main>
+</body>
+<script src="js/cookies.js" ></script>
+</html>
