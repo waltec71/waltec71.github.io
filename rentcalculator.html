@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+  <title>
+    Alex's Rent
+  </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="favicon-32x32.png"/>
+</head>
+
+<body>
+  <iframe src="./nav.html"></iframe>
+  <h1>How much should Alex pay for rent</h1>
+<p>...</p>
+
+</body>
+<!--
+    Factors that should influence rent:
+    How many roomates do you have?
+    How cool is your room compared to the others? (1-10)
+    Do you have your own bathroom? (Y/N)
+    Do your roommates have their own bathrooms? (Y/N)
+    How messy are you in the kitchen? (1-5)
+    Estimate the dollar value of the items you supplied for communal use: (Enter a number)
+    How loud are you in bed? (Enter decibel value)
+    See link for reference: https://www.commodious.co.uk/xiveillancetraining-env/1961/noise-chart2-sml.png
+
+-->
+  <p>
+    <form oninput="x.value=rentcalc(rent.value, roommates.value, cool.value, bathroom.value, bathroom2.value, kitchen.value, dollar.value, bed.value)">
+        <label for="rent">What is your unit's monthly rent?</label><br>
+        <input type="number" id="rent" value="0">(Enter a number<br><br>
+        <label for="roommates">How many roommates do you have?</label><br>
+        <input type="number" id="roommates" value="0"><br><br>
+        <label for="cool">How cool is your room compared to the others?</label><br>Not Cool
+        <input type="range" id="cool">Very Cool<br><br>
+        <label for="bathroom">Do you have your own bathroom?</label><br>No
+        <input type="range" id="bathroom" min="0" max="10">Yes<br><br>
+        <label for="bathroom2">Do your roommates have their own bathrooms? </label><br>No
+        <input type="range" id="bathroom2" min="0" max="10">Yes<br><br>
+        <label for="kitchen">How messy are you in the kitchen?</label><br>Very Clean
+        <input type="range" id="kitchen">Total Slob<br><br>
+        <label for="dollar">Estimate the dollar value of the items you supplied for communal use:</label><br>
+        <input type="number" id="dollar">(Enter a number)<br><br>
+        <label for="bed">How loud are you in bed?</label><br>
+        <input type="number" id="bed">(Enter decibel value)<br>
+        See link for reference: 
+        <a href="https://www.commodious.co.uk/xiveillancetraining-env/1961/noise-chart2-sml.png" target="_blank">Decibel Chart</a>
+        <br><br>
+        <b>You should pay $
+        <output name="x" for="drinks altitude"></output> in rent<b>
+        </form>
+        <br><br>
+        <script>
+        function rentcalc(rent,roommates, cool, bathroom, bathroom2, kitchen, dollar, bed) {
+          var startingrent = rent / (roommates + 1)
+          var multiplier = (1+ (.3*cool) + (.13*bathroom) + (-.1*bathroom2) + (.1*kitchen) + (-.01*dollar) + (.1*bed)) / 4
+          var rentshare = startingrent * multiplier
+          if (rent < rentshare || roommates == 0) {
+              return rent
+          } else if (rentshare < 0) {
+            return 0
+          } else {
+            return Math.round(rentshare)
+          }
+          
+        }
+        </script>  
+  <a href="index.html" target="_self">Back to main</a>
+  </p>
+  <script src="js/cookies.js" ></script>
+</html>
