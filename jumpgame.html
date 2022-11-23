@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+  <title>
+    Jumping Game?
+  </title>
+  <style>
+      #gameArea{
+          border: 4px solid rgb(0, 0, 0)
+      }
+      body{
+          height: 100vh;
+          background: brown;
+          text-align: center;
+          overflow: hidden; /* this hides scroll bar ! */
+      }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="covidstyle.css">
+
+</head>
+<body>
+  <iframe src="./nav.html"></iframe>
+<h1>jump jump</h1>
+<p>Land on platforms</p>
+<div id="scorediv">
+  <p id="score"></p>
+</div>
+<canvas id="gameArea" width="800" height="600"></canvas>
+<script src="js/jumpgame.js"></script>
+</body>
+  <p>
+    <button onclick= "startGame()"> Start Game</button>
+  </p>
+  <p>
+  <a href="index.html" target="_self">Back to main</a>
+  </p>
+  <script src="js/cookies.js" ></script>
+</html>
