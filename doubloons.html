@@ -37,10 +37,12 @@
     if (isNaN(amount)){
         alert("That's not a number!")
         return
-    }    
-    let newbalance = balance + amount;
-    setCookie("balance", newbalance, 1000);
-    alert("You now have " + newbalance + " doubloons. Spend them wisely.");
+    }
+    if (amount < 0) {
+      alert("Cannot deposit negative doubloons!")
+      return
+    }   
+    setBalance(amount);
 
   }
   function removeBalance() {
@@ -49,11 +51,23 @@
     if (isNaN(amount)){
         alert("That's not a number!")
         return
+    } 
+    if (amount < 0) {
+      alert("Cannot withdraw negative doubloons!")
+      return
     }   
-    let newbalance = balance - amount;
-    setCookie("balance", newbalance, 1000);
-    alert("You now have " + newbalance + " doubloons. Spend them wisely.");
+    setBalance(-amount);
 
+  }
+  function setBalance(amount) {
+    let newbalance = balance + amount;
+    setCookie("balance", newbalance, 1000);
+    if (newbalance >= 0) {
+      alert("You now have " + newbalance + " doubloons. Spend them wisely.");
+    }
+    else {
+      alert("You now have " + newbalance + " doubloons. I hope you financial situation improves soon.")
+    }
   }
 
 </script>
