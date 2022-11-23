@@ -44,7 +44,7 @@ function drawGame(){
     thrustCheck();
     detectCollision();
     document.getElementById("score").innerHTML = "Score: " + score;
-    if (y > 600) {
+    if (y > 610) {
         //cancelAnimationFrame(id);
         youLose();
         //alert('hey');
@@ -85,9 +85,10 @@ function detectCollision(){
         jumpspeed = 0;
         console.log(onPlatform);
         platformcolor = "yellow";
-    } else {
-        onPlatform = false;
-        platformcolor = "black";
+    }  if (y > 550){
+        onPlatform = true;
+        jumpspeed = Math.floor(-.5*jumpspeed);
+
     }
 
 }
@@ -111,7 +112,7 @@ function keyUp(event){
 }
 
 function applyGravity(){
-    if (onPlatform == false){
+    if (Math.abs(jumpspeed) > 0){
         jumpspeed = jumpspeed -gravity;
     }
 } 
